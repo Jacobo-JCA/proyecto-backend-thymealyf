@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+//indica que la clase es un componente de servicio de Spring, lo que significa que Spring
+// creará una instancia de esta clase y la inyectará en otros componentes que la necesiten
 public class AfiliadoService implements ILibroService<Afiliado> {
 
     @Autowired
@@ -21,6 +23,8 @@ public class AfiliadoService implements ILibroService<Afiliado> {
     }
 
     @Override
+    //se utilizará para indicar que el valor de retorno es nulo,
+    // lo que ayuda a evitar excepciones y errores de NullPointerException en la aplicación.
     public Optional<Afiliado> editarId(int id) {
         return afiliadoRepository.findById(id);
     }
